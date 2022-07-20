@@ -1,0 +1,18 @@
+pluginManagement {
+	repositories {
+		maven {
+			url = "https://maven.fabricmc.net"
+			name = "FabricMC"
+		}
+		gradlePluginPortal()
+	}
+}
+rootProject.name='fabric-loader'
+
+include "minecraft"
+
+if (JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
+	include "minecraft:minecraft-test"
+} else {
+	println("Minecraft test sub project requires java 17 or higher!")
+}
